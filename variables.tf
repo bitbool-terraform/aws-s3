@@ -1,6 +1,9 @@
 variable "bucket_name" {}
 
 variable "is_public" { default = false }
+variable "everything_is_public" { default = false }
+
+variable "bucket_policy" { default = null }
 
 variable "tags" { default = {}}
 variable "backup_tags" { default = {}}

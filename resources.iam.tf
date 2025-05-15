@@ -41,3 +41,27 @@ resource "aws_iam_policy" "read" {
     })
 
 }
+
+
+
+data "aws_iam_policy_document" "everything_public" {
+  statement {
+    sid = "everything_public"
+
+    effect = "Allow"
+
+    principals {
+      type        = "AWS"
+      identifiers = ["*"]
+    }
+
+    actions = [
+      "s3:GetObject",
+    ]
+
+    resources = [
+      "arn:aws:s3:::${var.bucket_name}/*",
+    ]
+  }
+}
+
