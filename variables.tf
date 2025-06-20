@@ -25,3 +25,5 @@ variable "trasnfer_acceleration" { default = false }
 
 variable "cors_rules_custom" { default = [] }
 variable "cors_allow_domains" { default = [] }
+
+variable "website" { default = {} }

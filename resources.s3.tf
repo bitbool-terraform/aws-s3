@@ -39,6 +39,7 @@ module "s3_bucket" {
 
   lifecycle_rule = local.lifecycle_rules
 
+  website = var.website
 }
 
 locals {
