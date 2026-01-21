@@ -1,11 +1,11 @@
 module "s3_bucket" {
   source = "terraform-aws-modules/s3-bucket/aws"
-  version = "4.11.0"
+  version = "5.9.0"
 
   bucket = var.bucket_name
 
   force_destroy       = var.force_destroy
-  acceleration_status = var.trasnfer_acceleration ? "Enabled" : "Suspended"
+  acceleration_status = var.trasnfer_acceleration ? "Enabled" : null
 #  request_payer       = "BucketOwner"
 
   tags = merge( {Name = var.bucket_name, TFModule = "aws-s3", AwsService = "s3"}, var.backup_tags , var.tags )
